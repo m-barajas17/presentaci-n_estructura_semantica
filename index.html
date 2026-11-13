@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7fc" />
+    <meta name="description" content="Aprende HTML semántico paso a paso: explora regiones, elige etiquetas y supera tres retos." />
+    <title>HTML con sentido — estructura semántica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="headings.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#presentacion">Saltar al contenido</a>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="HTML con sentido, inicio"><span class="brand-mark">&lt;/&gt;</span><span>HTML <i>con sentido</i></span></a>
+      <div class="topbar-right"><span class="course-label">GUÍA INTERACTIVA · 06 MIN</span><button class="presentation-toggle" id="presentationToggle" type="button" aria-pressed="false"><span aria-hidden="true">⛶</span> Presentar</button></div>
+    </header>
+
+    <div class="layout" id="presentacion">
+      <aside class="rail" aria-label="Índice de la presentación">
+        <div class="rail-label">RECORRIDO</div>
+        <nav class="section-nav">
+          <a href="#inicio" class="nav-item is-active" data-section="inicio"><span class="nav-num">00</span><span>Inicio</span><span class="nav-dot"></span></a>
+          <a href="#por-que" class="nav-item" data-section="por-que"><span class="nav-num">01</span><span>La idea</span><span class="nav-dot"></span></a>
+          <a href="#esqueleto" class="nav-item" data-section="esqueleto"><span class="nav-num">02</span><span>El mapa</span><span class="nav-dot"></span></a>
+          <a href="#anatomia" class="nav-item" data-section="anatomia"><span class="nav-num">03</span><span>Las etiquetas</span><span class="nav-dot"></span></a>
+          <a href="#titulos" class="nav-item" data-section="titulos"><span class="nav-num">04</span><span>Los títulos</span><span class="nav-dot"></span></a>
+          <a href="#practica" class="nav-item" data-section="practica"><span class="nav-num">05</span><span>El reto</span><span class="nav-dot"></span></a>
+          <a href="#cierre" class="nav-item" data-section="cierre"><span class="nav-num">06</span><span>Resumen</span><span class="nav-dot"></span></a>
+        </nav>
+        <div class="rail-bottom"><span class="rail-status"><span class="status-light"></span> TODO LISTO</span><span>HTML5 / 2026</span></div>
+      </aside>
+
+      <main class="stage">
+        <section class="slide hero-slide" id="inicio" data-slide="0">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> MISIÓN · CONSTRUIR UNA PÁGINA QUE SE ENTIENDA</div>
+            <h1>HTML con<br /><span class="highlight">sentido.</span></h1>
+            <p class="hero-lede">En este recorrido vas a convertir una página en un mapa claro: verás qué significa cada zona, cuándo usarla y cómo elegir la etiqueta correcta.</p>
+            <a class="primary-button" href="#por-que">Iniciar misión <span aria-hidden="true">↘</span></a>
+            <div class="hero-note"><span class="note-star">✳</span> 6 pasos · ejemplos para explorar · 3 retos cortos</div>
+          </div>
+          <div class="hero-art" aria-label="Vista ilustrada de una estructura HTML">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-caption"><span class="caption-dot"></span> MAPA DE UNA PÁGINA</div>
+            <div class="browser-card">
+              <div class="browser-chrome"><span></span><span></span><span></span><i>una-pagina.html</i><b>●</b></div>
+              <div class="browser-content">
+                <div class="mini-header"><span>HEADER</span><i></i><i></i><i></i></div>
+                <div class="mini-nav"><span>NAV</span><i></i><i></i><i></i></div>
+                <div class="mini-columns"><div class="mini-main"><span>MAIN</span><div class="mini-article"><span>ARTICLE</span><div></div><div></div><div></div></div><div class="mini-section"><span>SECTION</span><div></div></div></div><div class="mini-aside"><span>ASIDE</span><div></div><div></div><div></div></div></div>
+                <div class="mini-footer"><span>FOOTER</span></div>
+              </div>
+            </div>
+            <div class="floating-tag tag-main">&lt;main&gt;</div><div class="floating-tag tag-aside">&lt;aside&gt;</div><div class="floating-tag tag-section">&lt;section&gt;</div>
+            <div class="art-foot"><span>01 / 07</span><span>EL HTML COMO MAPA</span></div>
+          </div>
+          <div class="slide-foot"><span>DESLIZA PARA CONTINUAR</span><span class="down-arrow">↓</span></div>
+        </section>
+
+        <section class="slide why-slide" id="por-que" data-slide="1">
+          <div class="section-kicker"><span>01</span> PRIMERA PISTA · EL PROPÓSITO</div>
+          <div class="section-heading"><h2>Primero el <em>significado.</em><br />Después, el estilo.</h2><p>HTML organiza y describe el contenido. CSS cambia su apariencia. Si una zona es un menú, podemos decirlo con <code>&lt;nav&gt;</code> en vez de dejarla como un bloque sin nombre.</p></div>
+          <div class="before-after">
+            <article class="comparison-card generic-card"><div class="card-label"><span class="tiny-square gray-square"></span> BLOQUES SIN ETIQUETA</div><div class="generic-stack"><div>&lt;div&gt; Cabecera &lt;/div&gt;</div><div>&lt;div&gt; Menú &lt;/div&gt;</div><div>&lt;div&gt; Contenido &lt;/div&gt;</div><div>&lt;div&gt; Pie &lt;/div&gt;</div></div><p>Un <code>div</code> agrupa contenido, pero por sí solo no explica qué papel cumple.</p></article>
+            <div class="transform-arrow" aria-hidden="true">→</div>
+            <article class="comparison-card semantic-card"><div class="card-label"><span class="tiny-square lime-square"></span> BLOQUES CON PROPÓSITO</div><div class="semantic-stack"><div><b>&lt;header&gt;</b><span>Presenta</span></div><div><b>&lt;nav&gt;</b><span>Ayuda a moverse</span></div><div><b>&lt;main&gt;</b><span>Reúne lo principal</span></div><div><b>&lt;footer&gt;</b><span>Cierra una parte</span></div></div><p>El nombre de cada etiqueta ayuda a entender y recorrer la página.</p></article>
+          </div>
+          <div class="benefits-row"><span>¿QUIÉN SE BENEFICIA?</span><div><b>♿ Personas</b><small>Pueden saltar a regiones conocidas</small></div><div><b>⌕ Navegadores</b><small>Reconocen mejor el rol del contenido</small></div><div><b>⌘ Equipo</b><small>Lee y mantiene el código con más facilidad</small></div></div>
+          <div class="lesson-cue"><span>REGLA 1</span> Pregunta: <b>¿qué función cumple este contenido?</b> Elige una etiqueta que responda esa pregunta.</div>
+        </section>
+
+        <section class="slide skeleton-slide" id="esqueleto" data-slide="2">
+          <div class="section-kicker"><span>02</span> SEGUNDA PISTA · EL MAPA GENERAL</div>
+          <div class="section-heading compact-heading"><h2>Lee el mapa<br /><em>de afuera hacia dentro.</em></h2><p>Imagina una página de un club de exploración. Sigue el orden: presentación, navegación, contenido principal y cierre. Selecciona una etiqueta para ver su función.</p></div>
+          <div class="structure-workbench">
+            <div class="code-window"><div class="code-window-head"><div class="window-lights"><i></i><i></i><i></i></div><span>estructura.html</span><span class="html-pill">HTML</span></div>
+              <div class="code-tree" role="group" aria-label="Etiquetas de una página HTML, selecciona una para saber más">
+                <div class="code-line indent-0 muted-code"><span class="line-number">01</span><span class="code-text">&lt;!doctype html&gt;</span><span class="line-comment">← el archivo usa HTML</span></div>
+                <div class="code-line indent-0 muted-code"><span class="line-number">02</span><span class="code-text">&lt;html lang="es"&gt;</span><span class="line-comment">← idioma del contenido</span></div>
+                <div class="code-line indent-1 muted-code"><span class="line-number">03</span><span class="code-text">&lt;head&gt; ... metadatos ... &lt;/head&gt;</span></div>
+                <button class="code-line tag-select selected" data-tag="header" aria-pressed="true"><span class="line-number">04</span><span class="indent-guide">└─ </span><span class="code-text">&lt;header&gt;</span><span class="line-comment">presenta la página</span></button>
+                <button class="code-line tag-select" data-tag="nav" aria-pressed="false"><span class="line-number">05</span><span class="indent-guide">　 </span><span class="code-text">&lt;nav&gt;</span><span class="line-comment">enlaces para moverse</span></button>
+                <button class="code-line tag-select" data-tag="main" aria-pressed="false"><span class="line-number">06</span><span class="indent-guide">　 </span><span class="code-text">&lt;main&gt;</span><span class="line-comment">tema principal</span></button>
+                <button class="code-line tag-select" data-tag="section" aria-pressed="false"><span class="line-number">07</span><span class="indent-guide">　 └─ </span><span class="code-text">&lt;section&gt;</span><span class="line-comment">un capítulo del tema</span></button>
+                <button class="code-line tag-select" data-tag="article" aria-pressed="false"><span class="line-number">08</span><span class="indent-guide">　　 └─ </span><span class="code-text">&lt;article&gt;</span><span class="line-comment">una pieza independiente</span></button>
+                <button class="code-line tag-select" data-tag="aside" aria-pressed="false"><span class="line-number">09</span><span class="indent-guide">　 </span><span class="code-text">&lt;aside&gt;</span><span class="line-comment">dato relacionado</span></button>
+                <button class="code-line tag-select" data-tag="footer" aria-pressed="false"><span class="line-number">10</span><span class="indent-guide">　 </span><span class="code-text">&lt;footer&gt;</span><span class="line-comment">cierra página o sección</span></button>
+                <div class="code-line indent-0 muted-code"><span class="line-number">11</span><span class="code-text">&lt;/html&gt;</span></div>
+              </div>
+              <div class="code-window-foot"><span><i class="pulse-dot"></i> EXPLORA LA ESTRUCTURA</span><span>HTML semántico</span></div>
+            </div>
+            <aside class="inspector" aria-live="polite" aria-atomic="true"><div class="inspector-top"><span class="inspector-label">FICHA · QUÉ HACE Y CUÁNDO USARLA</span><span class="inspector-index" id="inspectorIndex">01 / 07</span></div><div class="inspector-content"><div class="tag-icon" id="tagIcon">⌂</div><div class="tag-chip" id="tagChip">&lt;header&gt;</div><h3 id="tagTitle">La puerta de entrada</h3><p id="tagDescription">Agrupa el contenido introductorio de una página o de una sección. Puede incluir el título, el logotipo o quién escribió el contenido.</p><div class="inspector-rule"></div><div class="usage-label">EJEMPLO EN ESTA PÁGINA</div><p class="usage-text" id="tagUsage">El nombre del club y el título «Pequeños mundos».</p><div class="tip-box"><span>✳</span><p id="tagTip">Ojo: header presenta contenido; head guarda metadatos que no se muestran en la página.</p></div></div><div class="inspector-hint"><span>↖</span> Prueba con nav, main y las demás etiquetas</div></aside>
+          </div>
+        </section>
+
+        <section class="slide anatomy-slide" id="anatomia" data-slide="3">
+          <div class="section-kicker"><span>03</span> TERCERA PISTA · RECONOCE CADA ZONA</div>
+          <div class="section-heading compact-heading"><h2>Explora la página<br /><em>como si fuera un mapa.</em></h2><p>Lee primero los ejemplos dentro de cada región. Después, selecciona una zona de color para descubrir por qué esa etiqueta encaja ahí.</p></div>
+          <div class="anatomy-layout">
+            <div class="page-preview" aria-label="Ejemplo interactivo de una página semántica">
+              <div class="preview-browser"><span></span><span></span><span></span><div>ejemplo-de-pagina.com</div></div>
+              <button class="preview-zone zone-header" data-tag="header"><span class="zone-tag">&lt;header&gt;</span><b>Pequeños mundos</b><i>Historias y curiosidades del océano</i></button>
+              <button class="preview-zone zone-nav" data-tag="nav"><span class="zone-tag">&lt;nav&gt;</span><i>Explorar</i><i>Historias</i><i>Acerca de</i></button>
+              <div class="preview-columns"><div class="preview-main"><button class="preview-zone zone-main" data-tag="main"><span class="zone-tag">&lt;main&gt;</span></button><button class="preview-zone zone-article" data-tag="article"><span class="zone-tag">&lt;article&gt;</span><b>El viaje de la tortuga verde</b><i>Un viaje de miles de kilómetros empieza en una playa tranquila.</i><span class="article-by">Por Ana Ríos · 5 min de lectura</span></button><button class="preview-zone zone-section" data-tag="section"><span class="zone-tag">&lt;section&gt;</span><b>También te puede interesar</b><i class="section-skeleton"></i><i class="section-skeleton short"></i></button></div><button class="preview-zone zone-aside" data-tag="aside"><span class="zone-tag">&lt;aside&gt;</span><b>Dato del océano</b><i>Una nota relacionada con el artículo.</i></button></div>
+              <button class="preview-zone zone-footer" data-tag="footer"><span class="zone-tag">&lt;footer&gt;</span><i>© 2026 Pequeños mundos</i><i>Fuentes · Contacto</i></button>
+            </div>
+            <aside class="anatomy-info" id="anatomyInfo" aria-live="polite"><span class="info-eyebrow">PISTA DE EXPLORACIÓN</span><span class="info-emoji">🧭</span><h3>¿Qué trabajo hace cada zona?</h3><p>Por ejemplo: el título y el nombre del sitio se presentan; los enlaces permiten navegar; el artículo cuenta una historia completa.</p><div class="info-legend"><span><i class="legend-dot lime-dot"></i> Identifica el propósito</span><span><i class="legend-dot pink-dot"></i> Busca el contenido clave</span><span><i class="legend-dot blue-dot"></i> Separa lo complementario</span></div></aside>
+          </div>
+          <div class="semantic-note"><span class="note-mark">i</span><span>La semántica ayuda a describir el contenido; <b>CSS decide cómo se ve</b> y JavaScript cómo se comporta.</span></div>
+        </section>
+
+        <section class="slide headings-slide" id="titulos" data-slide="4">
+          <div class="section-kicker"><span>04</span> CUARTA PISTA · ORDENA LOS ENCABEZADOS</div>
+          <div class="section-heading"><h2>Los títulos también<br /><em>dibujan un mapa.</em></h2><p>Piensa en un índice de un libro: cada nivel muestra si una idea es principal o depende de otra. Pulsa cada nivel para ver qué anuncia.</p></div>
+          <div class="heading-grid"><article class="heading-demo"><div class="heading-example"><h1>Océanos del mundo</h1><h2>Vida marina</h2><h3>Tortugas</h3><h4>La tortuga verde</h4></div><div class="heading-levels"><div><button class="heading-tag-select" data-tag="h1">h1</button><span>Tema principal de esta página</span></div><div><button class="heading-tag-select" data-tag="h2">h2</button><span>Sección dentro del tema principal</span></div><div><button class="heading-tag-select" data-tag="h3">h3</button><span>Subsección de «Vida marina»</span></div><div><button class="heading-tag-select" data-tag="h4">h4</button><span>Detalle dentro del tema «Tortugas»</span></div></div><div class="heading-feedback" id="headingFeedback" aria-live="polite">Pulsa un nivel para ver cómo se relaciona con los demás.</div></article><aside class="rule-card"><span class="rule-icon">↳</span><h3>Haz la prueba<br />del esquema.</h3><p>Lee solo los encabezados, en orden. ¿Se entiende el tema y cómo se dividen sus partes? Si sí, la jerarquía guía bien.</p><div class="rule-divider"></div><p class="rule-small"><span>✳</span> Cambia el tamaño con CSS. Cambia el nivel solo cuando cambie la relación entre ideas.</p></aside></div>
+          <div class="contrast-strip"><div><code>&lt;section&gt;</code><span>Un capítulo temático, como «Vida marina»</span></div><div><code>&lt;article&gt;</code><span>Una pieza completa, como una noticia</span></div><div><code>&lt;div&gt;</code><span>Un grupo visual sin un significado propio</span></div></div>
+        </section>
+
+        <section class="slide practice-slide" id="practica" data-slide="5">
+          <div class="section-kicker"><span>05</span> RETO FINAL · TRES DECISIONES</div>
+          <div class="section-heading compact-heading"><h2>Pon a prueba<br /><em>tu mapa mental.</em></h2><p>Lee la situación, busca la pista y elige la etiqueta. Cada respuesta te explica por qué funciona.</p></div>
+          <div class="quiz-progress"><span id="quizRoundLabel">RETO 1 DE 3</span><div class="quiz-progress-track"><span id="quizProgressFill"></span></div><span id="quizScore">0 aciertos</span></div>
+          <div class="quiz-layout"><div class="quiz-story"><span class="story-label" id="quizStoryLabel">SITUACIÓN · PUBLICACIÓN</span><h3 id="quizStoryTitle">La banda anuncia<br />una nueva gira.</h3><p id="quizStoryDescription">La nota tiene título, fecha y texto propios. Se entiende si alguien la comparte sola.</p><div class="story-stamp" id="quizStoryStamp">✳ PISTA: PUEDE VIVIR POR SÍ SOLA</div></div><div class="quiz-options" id="quizOptions"><span class="option-label">¿QUÉ ETIQUETA ENCAJA MEJOR?</span><button class="quiz-option" data-answer="article"><code>&lt;article&gt;</code><span>Una publicación independiente</span><b>↗</b></button><button class="quiz-option" data-answer="section"><code>&lt;section&gt;</code><span>Un capítulo de un tema</span><b>↗</b></button><button class="quiz-option" data-answer="aside"><code>&lt;aside&gt;</code><span>Un contenido complementario</span><b>↗</b></button><div class="quiz-feedback" id="quizFeedback" aria-live="polite">Elige una opción para recibir una pista.</div><button class="quiz-next" id="quizNext" type="button" disabled>Siguiente reto <span aria-hidden="true">→</span></button><button class="reset-quiz" id="resetQuiz" type="button">↺ Empezar de nuevo</button></div></div>
+        </section>
+
+        <section class="slide closing-slide" id="cierre" data-slide="6">
+          <div class="closing-decoration" aria-hidden="true">&lt;/&gt;</div><div class="section-kicker"><span>06</span> MISIÓN CUMPLIDA · RESUMEN EN TRES PASOS</div>
+          <div class="closing-copy"><h2>Tu página ya<br />tiene <em>un mapa.</em></h2><p>Antes de cerrar una etiqueta, pregúntate: <b>¿qué papel cumple este contenido?</b> Nómbralo con HTML, ordénalo con encabezados y deja que CSS se ocupe de su apariencia.</p><a class="primary-button" href="#inicio">Volver a empezar <span aria-hidden="true">↑</span></a></div>
+          <div class="takeaway-grid"><div><span>01</span><b>Identifica el papel</b><small>¿Presenta, navega, cuenta o complementa?</small></div><div><span>02</span><b>Elige la etiqueta</b><small>Usa una etiqueta semántica cuando describa el contenido.</small></div><div><span>03</span><b>Revisa el orden</b><small>Los encabezados deben contar el esquema de la página.</small></div></div>
+          <div class="sources"><span>PARA SEGUIR EXPLORANDO</span><a href="https://html.spec.whatwg.org/multipage/sections.html" target="_blank" rel="noreferrer">Estándar HTML · secciones y encabezados ↗</a><a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" rel="noreferrer">MDN · Semántica ↗</a></div>
+          <footer class="closing-footer"><span>HTML CON SENTIDO</span><span>HECHO PARA APRENDER · &lt;/&gt;</span></footer>
+        </section>
+      </main>
+      <aside class="right-rail" aria-label="Avance de la presentación"><span class="progress-label">PROGRESO</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="progress-count" id="progressCount">00 <i>/ 06</i></span><button class="next-slide" id="nextSlide" type="button" aria-label="Siguiente apartado">↓</button></aside>
+    </div>
+  </body>
+</html>
+
